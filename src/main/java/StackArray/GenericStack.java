@@ -36,6 +36,12 @@ public class GenericStack<E> {
 	public String pop()
 	{
 		E element = elements[elements.length - 1];
+		E[] tempelements = (E[]) new Object[elements.length - 1];
+		int count = 0;
+		for (E i : elements)
+		{
+			tempelements[count] = i;
+		}
 
 
 		return "";
