@@ -52,7 +52,7 @@ public class TableNested<K, V> {
 
 
 
-     class Entry<K, V> {
+     class Entry{
         private K key;
         private V value;
 
