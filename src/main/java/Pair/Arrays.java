@@ -1,5 +1,6 @@
 package Pair;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -13,27 +14,28 @@ import java.util.Collections;
 public class Arrays {
 
 
+    public static <E> Pair<E> firstLast(ArrayList<E> a) {
+        E firstNum = a.get(0);
+        E secondNum = a.get(a.size() - 1);
+        return new Pair(firstNum, secondNum);
+    }
 
-    public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> a) {
 
-
+    public static<E> E min(ArrayList a) {
         Collections.sort(a);
-        
-
+        return (E) a.get(0);
     }
 
-
-
-    public Arrays min() {
-
-
+    public static <E> E  max(ArrayList a) {
+        Collections.sort(a);
+        return (E) a.get(a.size()-1);
     }
 
-    public Arrays max() {
-    }
-
-    public minMax(){
-
+    public static <E extends Comparable> Pair<E> minMax(ArrayList<E> a) {
+        Collections.sort(a);
+        E firstNum = a.get(0);
+        E secondNum = a.get(a.size() - 1);
+        return new Pair(firstNum, secondNum);
     }
 
 }
