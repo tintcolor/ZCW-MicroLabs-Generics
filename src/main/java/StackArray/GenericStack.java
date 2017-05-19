@@ -21,10 +21,10 @@ public class GenericStack<E> {
 		int count = 0;
 		for (E i : elements)
 		{
-			tempelements[count] = i;
+			tempelements[count + 1] = i;
 			count++;
 		}
-		tempelements[elements.length] = element;
+		tempelements[elements.length - elements.length] = element;
 		elements = tempelements;
 	}
 
@@ -33,17 +33,14 @@ public class GenericStack<E> {
 		return elements.length == 0;
 	}
 
-	public String pop()
+	public E pop()
 	{
 		E element = elements[elements.length - 1];
 		E[] tempelements = (E[]) new Object[elements.length - 1];
-		int count = 0;
-		for (E i : elements)
+		for (int i = 0; i < elements.length - 2; i++)
 		{
-			tempelements[count] = i;
+			tempelements[i] = elements[i];
 		}
-
-
-		return "";
+		return element;
 	}
 }
